@@ -8,6 +8,9 @@ public class PlayerController2D : MonoBehaviour
 {
     public float speed = 5;
     bool isFacingRight;
+    bool isRunning;
+    float rx;
+    float ry;
 
     Rigidbody2D playerRb;
     PlayerInputHandle input;
@@ -43,9 +46,19 @@ public class PlayerController2D : MonoBehaviour
     }
     void Move()
     {
-        playerRb.velocity = new Vector2(input.moveInput.x * speed, playerRb.velocity.y);
-        playerRb.velocity = new Vector2(playerRb.velocity.x, input.moveInput.y * speed);
+        rx = input.moveInput.x * speed;
+        ry = input.moveInput.y * speed;
 
+        playerRb.velocity = new Vector2(rx, ry);
+
+        isRunning = playerRb.velocity.magnitude > 0.1f;
+
+        if (isRunning)
+        {
+            playerAnim.SetFloat("X", rx);
+            playerAnim.SetFloat("Y", ry);
+        }
+        playerAnim.SetBool("isRunning", isRunning);
     }
     void Flip()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 
-public class PlayerController2D : MonoBehaviour
+public class TestController2D : MonoBehaviour
 {
     public float speed = 5;
     bool isFacingRight;
@@ -15,29 +15,23 @@ public class PlayerController2D : MonoBehaviour
     Rigidbody2D playerRb;
     PlayerInputHandle input;
     Animator playerAnim;
-
+    
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInputHandle>();
         playerAnim = GetComponent<Animator>();
     }
-
+    
     void Update()
     {
-        if (input.moveInput.x > 0)
+        if (input.moveInput.x > 0 && !isFacingRight)
         {
-            if (!isFacingRight)
-            {
-                Flip();
-            }
+            Flip();
         }
-        if (input.moveInput.x < 0)
+        if (input.moveInput.x < 0 && isFacingRight)
         {
-            if (isFacingRight)
-            {
-                Flip();
-            }
+            Flip();
         }
     }
     private void FixedUpdate()

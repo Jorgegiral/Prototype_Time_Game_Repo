@@ -49,14 +49,14 @@ public class PlayerController2D : MonoBehaviour
       //Flip
       if (moveInput.x > 0)
         {
-            if (!isFacingRight)
+            if (isFacingRight)
             {
                 Flip();
             }
         }
       if (moveInput.x < 0)
         {
-            if (isFacingRight)
+            if (!isFacingRight)
             {
                 Flip();
             }
@@ -91,9 +91,9 @@ public class PlayerController2D : MonoBehaviour
     void HandleAnimations()
     {
         //Conector de parámetros de cambios de animación
-        playerAnim.SetBool("IsJumping", !isGrounded);
-        if (moveInput.x > 0 || moveInput.x < 0) playerAnim.SetBool("IsRunning", true);
-        else playerAnim.SetBool("IsRunning", false);
+        playerAnim.SetBool("isJumping", !isGrounded);
+        if (moveInput.x > 0 || moveInput.x < 0) playerAnim.SetBool("isRunning", true);
+        else playerAnim.SetBool("isRunning", false);
     }
 
     #region Input Events
@@ -114,8 +114,6 @@ public class PlayerController2D : MonoBehaviour
             }
             
         }
-
-        
     }
 
     #endregion

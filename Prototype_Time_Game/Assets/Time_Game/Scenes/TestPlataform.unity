@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774b990b80cf7ef43a0ca49c9ce6e52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: llave
+  itemID: key
 --- !u!1 &407951316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4036,6 +4036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128706438}
   - component: {fileID: 2128706437}
+  - component: {fileID: 2128706440}
   - component: {fileID: 2128706439}
   m_Layer: 0
   m_Name: testpuerta
@@ -4123,8 +4124,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfbbc85f984c2848ba528740db8ae8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItemID: llave
+  requiredItemID: key
   inventory: {fileID: 203063364}
+--- !u!61 &2128706440
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128706436}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2138114799
 GameObject:
   m_ObjectHideFlags: 0

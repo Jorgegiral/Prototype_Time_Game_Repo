@@ -52,6 +52,10 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+    public bool HasItem(string itemID)
+    {
+        return itemsID.Contains(itemID);
+    }
     public void RemoveItem(string itemID)
     {
         if (itemsID.Contains(itemID))
@@ -69,10 +73,5 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-    }
-
-    public bool HasItem(string itemID)
-    {
-        return itemsID.Contains(itemID);
     }
 }

@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 326577765}
   - component: {fileID: 326577764}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,7 +1115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -210.62042, y: 124.86084}
+  m_AnchoredPosition: {x: -226, y: 269}
   m_SizeDelta: {x: 185.653, y: 185.653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326577764
@@ -1131,14 +1131,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6313726, g: 0.34509805, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 357138439, guid: c45aa28052efc294f860c5f93cc882e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bddc24ded0ee0c34eb65a52772b01584, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1538,7 +1538,7 @@ Transform:
   m_GameObject: {fileID: 525409382}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 1.3500001, z: 0}
+  m_LocalPosition: {x: -0.04, y: 2.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1576,7 +1576,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02271521, y: -0.47365057}
+  m_Offset: {x: -0.02271521, y: -1.1582555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1587,7 +1587,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8746963, y: 1.9473011}
+  m_Size: {x: 1.8746963, y: 3.077472}
   m_EdgeRadius: 0
 --- !u!212 &525409386
 SpriteRenderer:
@@ -1925,6 +1925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 707371201}
   - component: {fileID: 707371200}
+  - component: {fileID: 707371202}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -1973,9 +1974,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1194242975, guid: c45aa28052efc294f860c5f93cc882e3, type: 3}
-  m_Color: {r: 0.63232434, g: 0.3443396, b: 1, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: -602926782, guid: 22bcbb3013932774f9b5014f206118cc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -2000,6 +2001,27 @@ Transform:
   - {fileID: 525409383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &707371202
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707371199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c974929dcee4bc848bb08e336f397058, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &827802670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,7 +3755,7 @@ GameObject:
   - component: {fileID: 1628677825}
   - component: {fileID: 1628677824}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Father
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3748,14 +3770,14 @@ RectTransform:
   m_GameObject: {fileID: 1628677822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9091, y: 2.9091, z: 2.9091}
+  m_LocalScale: {x: -2.9091, y: 2.9091, z: 2.9091}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2138114800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1731, y: 124.86084}
+  m_AnchoredPosition: {x: -1681, y: 267}
   m_SizeDelta: {x: 185.653, y: 185.653}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628677824
@@ -3778,7 +3800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 357138439, guid: c45aa28052efc294f860c5f93cc882e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80d45e34c6c79184e8887d54b5a6b09f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3929,6 +3951,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2809745692359577421, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Size.x
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809745692359577421, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809745692359577421, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -786793843, guid: 030057e2f5a0e9e45a6af86d1575eb48, type: 3}
+    - target: {fileID: 6660933756796271043, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045195503110892931, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7526597
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045195503110892931, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1947951
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045195503110892931, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00610888
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045195503110892931, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.0973976
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141446840040063951, guid: f062786c06d615749a7fae6503859fe2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 979e4e8d40fbeea42b339c2e5d949f36, type: 2}
     - target: {fileID: 8899716929103456822, guid: f062786c06d615749a7fae6503859fe2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

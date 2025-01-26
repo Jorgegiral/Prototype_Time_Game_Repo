@@ -2766,6 +2766,7 @@ GameObject:
   - component: {fileID: 1100705147}
   - component: {fileID: 1100705149}
   - component: {fileID: 1100705148}
+  - component: {fileID: 1100705150}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2789,7 +2790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -406, y: -350.97083}
+  m_AnchoredPosition: {x: -406, y: -378}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100705148
@@ -2877,7 +2878,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -601.5651, w: -80.59247}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2891,6 +2892,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100705146}
   m_CullTransparentMesh: 1
+--- !u!114 &1100705150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100705146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa04e3d0ad859f346bfc89f4704f7315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 0}
+  typingTime: 0.05
+  dialogueActive: {fileID: 2138114799}
+  dialogueNext: {fileID: 0}
+  dialogueBack: {fileID: 2102132113}
+  dialoguePanel: {fileID: 1631955937}
 --- !u!1 &1229821504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,6 +3158,7 @@ GameObject:
   - component: {fileID: 1285742039}
   - component: {fileID: 1285742041}
   - component: {fileID: 1285742040}
+  - component: {fileID: 1285742042}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3185,9 +3205,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Holi :3
+  m_text: 'Holi como estas?
 
-'
+    espero que muy bien'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 530c238b426166e4d9de9a57a2e19644, type: 2}
   m_sharedMaterial: {fileID: -5069835096020526381, guid: 530c238b426166e4d9de9a57a2e19644, type: 2}
@@ -3250,7 +3270,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -610.3831, w: -78.665146}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3264,6 +3284,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285742038}
   m_CullTransparentMesh: 1
+--- !u!114 &1285742042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285742038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa04e3d0ad859f346bfc89f4704f7315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 0}
+  typingTime: 0.05
+  dialogueActive: {fileID: 2102132113}
+  dialogueNext: {fileID: 2138114799}
+  dialogueBack: {fileID: 0}
+  dialoguePanel: {fileID: 1631955937}
 --- !u!1 &1286372547
 GameObject:
   m_ObjectHideFlags: 0

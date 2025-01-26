@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8141446840040063951}
   - component: {fileID: 6660933756796271043}
   - component: {fileID: 7045195503110892931}
+  - component: {fileID: 3733649175593290259}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -111,12 +112,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1194242975, guid: c45aa28052efc294f860c5f93cc882e3, type: 3}
+  m_Sprite: {fileID: -786793843, guid: 030057e2f5a0e9e45a6af86d1575eb48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.75, y: 2.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -238,7 +239,7 @@ Animator:
   m_GameObject: {fileID: 1646076291218766627}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5f4edf75c7841449bfd447cb854fefb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 979e4e8d40fbeea42b339c2e5d949f36, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -264,7 +265,7 @@ MonoBehaviour:
   playerRb: {fileID: 0}
   playerInput: {fileID: 0}
   playerAnim: {fileID: 0}
-  speed: 5
+  speed: 8
   isFacingRight: 0
   jumpForce: 6
   isGrounded: 0
@@ -305,6 +306,24 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012396514, y: 0.48209393}
-  m_Size: {x: 0.55937254, y: 0.96418786}
+  m_Offset: {x: -0.00610888, y: 1.0973976}
+  m_Size: {x: 0.7526597, y: 2.1947951}
   m_Direction: 0
+--- !u!114 &3733649175593290259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646076291218766627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d134375aad6784d85f145d20dd4013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  inventory: []
+  items: {fileID: 0}

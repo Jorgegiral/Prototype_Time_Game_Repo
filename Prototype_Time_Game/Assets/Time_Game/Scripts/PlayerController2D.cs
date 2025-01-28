@@ -9,23 +9,27 @@ public class PlayerController2D : MonoBehaviour
 
     
     //Referencias generales
-    [SerializeField] Rigidbody2D playerRb; //Ref al rigidbody del player 
-    [SerializeField] PlayerInput playerInput; //Ref al gestor del input del jugador
-    [SerializeField] Animator playerAnim; //Ref al animator para gestionar las transiciones de animación
+    Rigidbody2D playerRb; //Ref al rigidbody del player 
+    PlayerInput playerInput; //Ref al gestor del input del jugador
+    Animator playerAnim; //Ref al animator para gestionar las transiciones de animación
 
-    [Header("Movement Parameters")]
+    private Vector2 moveInput;
+    public int life;
+    public float hitForce;
+    public bool isdead;
+    private bool damaged;
+    private float damageCooldown = 1f;
+    private float damageTimer;
 
-    private Vector2 moveInput; //Almacén del input del player
+    [Header ("Movement Parameters")]
     public float speed;
+
     [SerializeField] bool isFacingRight;
 
     [Header ("Jump Parameters")]
     public float jumpForce;
 
     [SerializeField] bool isGrounded;
-
-    //Variables para el Groundcheck
-
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundCheckRadius = 0.1f;
     [SerializeField] LayerMask groundLayer;
@@ -62,7 +66,14 @@ public class PlayerController2D : MonoBehaviour
             }
         }
 
-
+        if (damaged)
+        {
+            damageTimer -= Time.deltaTime;
+            if (damageTimer <= 0)
+            {
+                damaged = false;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -85,7 +96,7 @@ public class PlayerController2D : MonoBehaviour
 
     void GroundCheck()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer); 
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
     void HandleAnimations()
@@ -96,9 +107,34 @@ public class PlayerController2D : MonoBehaviour
 
     }
 
+    public void damage(Vector2 direction, int cantDamage)
+    {
+        if (!damaged)
+        {
+            damaged = true;
+            damageTimer = damageCooldown;
+            life -= cantDamage;
+            if (life <= 0)
+            {
+                isdead = true;
+            }
+            if (!isdead)
+            {
+                Vector2 hit = direction.normalized * hitForce;
+                playerRb.AddForce(hit * hitForce, ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            damage(other.transform.position - transform.position, 10); 
+        }
+    }
+
     #region Input Events
-    //Para crea un evento:
-    //Se define PUBLIC sin tipo de dato (VOID) y con una referencia al input (Callback.Context)
 
     public void HandleMove(InputAction.CallbackContext context)
     {
@@ -112,7 +148,6 @@ public class PlayerController2D : MonoBehaviour
             {
                 playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
-            
         }
     }
 

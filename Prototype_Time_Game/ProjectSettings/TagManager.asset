@@ -6,6 +6,7 @@ TagManager:
   tags:
   - isGrounded
   - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX

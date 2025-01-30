@@ -5115,7 +5115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 203063365}
   detectionRadius: 7
-  speed: 5
+  speed: 7
 --- !u!61 &1673495488
 BoxCollider2D:
   m_ObjectHideFlags: 0

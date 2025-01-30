@@ -11,10 +11,12 @@ public class EnemyController : MonoBehaviour
     bool isFacingRight;
     private Rigidbody2D enemyRb;
     private Vector2 enemymovement;
+    private Animator enemyAnim;
 
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
+        enemyAnim = GetComponent<Animator>();
     }
 
     void Update()
@@ -26,10 +28,12 @@ public class EnemyController : MonoBehaviour
             Vector2 direction = (player.position - transform.position).normalized;
             enemymovement = new Vector2(direction.x, 0);
             Enemydirection(direction.x);
+            enemyAnim.SetBool("isRunning", true);
         }
         else
         {
             enemymovement = Vector2.zero;
+            enemyAnim.SetBool("isRunning", false);
         }
         enemyRb.MovePosition(enemyRb.position + enemymovement * speed * Time.deltaTime);
     }
@@ -58,6 +62,7 @@ public class EnemyController : MonoBehaviour
         transform.localScale = currentScale;
         isFacingRight = !isFacingRight;
     }
+
 
     void OnDrawGizmosSelected()
     {

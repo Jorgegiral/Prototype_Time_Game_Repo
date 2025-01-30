@@ -262,9 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f440d4e87124994f93741da7bceaf38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRb: {fileID: 0}
-  playerInput: {fileID: 0}
-  playerAnim: {fileID: 0}
+  life: 3
+  hitForce: 8
+  damageCooldown: 2
   speed: 8
   isFacingRight: 0
   jumpForce: 6

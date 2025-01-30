@@ -7,26 +7,24 @@ using UnityEngine.Rendering.UI; //Librería para que funcione el New Input System
 public class PlayerController2D : MonoBehaviour
 {
 
-    
     //Referencias generales
     Rigidbody2D playerRb; //Ref al rigidbody del player 
     PlayerInput playerInput; //Ref al gestor del input del jugador
-    Animator playerAnim; //Ref al animator para gestionar las transiciones de animación
+    Animator playerAnim; //Ref al animator para gestionar las transiciones de animaci?n
 
     private Vector2 moveInput;
     public int life;
     public float hitForce;
-    public bool isdead;
     private bool damaged;
-    private float damageCooldown = 1f;
-    private float damageTimer;
+    public float damageCooldown = 2f;
+    bool isGod = false;
 
-    [Header ("Movement Parameters")]
+    [Header("Movement Parameters")]
     public float speed;
 
     [SerializeField] bool isFacingRight;
 
-    [Header ("Jump Parameters")]
+    [Header("Jump Parameters")]
     public float jumpForce;
 
     [SerializeField] bool isGrounded;
@@ -50,28 +48,19 @@ public class PlayerController2D : MonoBehaviour
         HandleAnimations();
         GroundCheck();
 
-      //Flip
-      if (moveInput.x > 0)
+        //Flip
+        if (moveInput.x > 0)
         {
             if (!isFacingRight)
             {
                 Flip();
             }
         }
-      if (moveInput.x < 0)
+        if (moveInput.x < 0)
         {
             if (isFacingRight)
             {
                 Flip();
-            }
-        }
-
-        if (damaged)
-        {
-            damageTimer -= Time.deltaTime;
-            if (damageTimer <= 0)
-            {
-                damaged = false;
             }
         }
     }
@@ -82,10 +71,13 @@ public class PlayerController2D : MonoBehaviour
     }
     void Movement()
     {
-       playerRb.velocity = new Vector2(moveInput.x * speed, playerRb.velocity.y);
+        if (!damaged)
+        {
+            playerRb.velocity = new Vector2(moveInput.x * speed, playerRb.velocity.y);
+        }
     }
 
-   
+
     void Flip()
     {
         Vector3 currentScale = transform.localScale;
@@ -94,6 +86,26 @@ public class PlayerController2D : MonoBehaviour
         isFacingRight = !isFacingRight; //nombre de bool = !nombre de bool (cambio al estado contrario)
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        {
+            if (collision.gameObject.CompareTag("Enemy") && !isGod)
+            {
+                life--;
+
+                Vector2 hit = (transform.position - collision.transform.position).normalized;
+                playerRb.velocity = Vector2.zero;
+                playerRb.AddForce(new Vector2(hit.x * hitForce, Mathf.Abs(hitForce * 0.5f)), ForceMode2D.Impulse);
+
+                StartCoroutine(InvulnerabilityCoroutine());
+
+                if (life <= 0)
+                {
+                    Debug.Log("El jugador ha muerto");
+                }
+            }
+        }
+    }
     void GroundCheck()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -107,31 +119,17 @@ public class PlayerController2D : MonoBehaviour
 
     }
 
-    public void damage(Vector2 direction, int cantDamage)
-    {
-        if (!damaged)
-        {
-            damaged = true;
-            damageTimer = damageCooldown;
-            life -= cantDamage;
-            if (life <= 0)
-            {
-                isdead = true;
-            }
-            if (!isdead)
-            {
-                Vector2 hit = direction.normalized * hitForce;
-                playerRb.AddForce(hit * hitForce, ForceMode2D.Impulse);
-            }
-        }
-    }
 
-    void OnTriggerEnter2D(Collider2D other)
+    IEnumerator InvulnerabilityCoroutine()
     {
-        if (other.CompareTag("Enemy"))
-        {
-            damage(other.transform.position - transform.position, 10); 
-        }
+        isGod = true;
+        damaged = true;
+
+        yield return new WaitForSeconds(0.5f); 
+        damaged = false;
+        yield return new WaitForSeconds(damageCooldown - 0.5f);
+
+        isGod = false;
     }
 
     #region Input Events

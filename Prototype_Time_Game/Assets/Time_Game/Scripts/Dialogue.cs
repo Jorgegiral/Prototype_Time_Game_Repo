@@ -5,8 +5,8 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private float typingTime = 0.05f;
+    private TextMeshProUGUI dialogueText;
+    private float typingTime = 0.05f;
 
     public GameObject dialogueActive;
     public GameObject dialogueNext;

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameStatus currentGameState = GameStatus.gameRunning;
 
     public float currentLife;
+    public float fullLife = 3;
 
     private void Awake()
     {

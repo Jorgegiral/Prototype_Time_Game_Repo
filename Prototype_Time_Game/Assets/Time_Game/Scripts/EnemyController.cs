@@ -25,10 +25,10 @@ public class EnemyController : MonoBehaviour
 
         if (distanceToPlayer < detectionRadius)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            enemymovement = new Vector2(direction.x, 0);
-            Enemydirection(direction.x);
+            enemymovement = (player.position - transform.position).normalized;
+            enemymovement.y = 0;
             enemyAnim.SetBool("isRunning", true);
+            Enemydirection(enemymovement.x);
         }
         else
         {

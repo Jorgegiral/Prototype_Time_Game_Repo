@@ -13,7 +13,6 @@ public class PlayerController2D : MonoBehaviour
     Animator playerAnim; //Ref al animator para gestionar las transiciones de animaci?n
 
     private Vector2 moveInput;
-    public int life;
     public float hitForce;
     private bool damaged;
     public float damageCooldown = 2f;
@@ -32,6 +31,8 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] float groundCheckRadius = 0.1f;
     [SerializeField] LayerMask groundLayer;
 
+    [Header("Respawn Parameters")]
+    public Transform respawnPoint;
 
     void Start()
     {
@@ -63,6 +64,7 @@ public class PlayerController2D : MonoBehaviour
                 Flip();
             }
         }
+
     }
 
     private void FixedUpdate()
@@ -91,17 +93,17 @@ public class PlayerController2D : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy") && !isGod)
             {
-                life--;
+                GameManager.Instance.currentLife--;
 
                 Vector2 hit = (transform.position - collision.transform.position).normalized;
                 playerRb.velocity = Vector2.zero;
                 playerRb.AddForce(new Vector2(hit.x * hitForce, Mathf.Abs(hitForce * 0.5f)), ForceMode2D.Impulse);
-
+                transform.position = respawnPoint.position;
                 StartCoroutine(InvulnerabilityCoroutine());
 
-                if (life <= 0)
+                if (GameManager.Instance.currentLife <= 0)
                 {
-                    Debug.Log("El jugador ha muerto");
+                    Debug.Log("jugador muerto");
                 }
             }
         }
@@ -118,7 +120,6 @@ public class PlayerController2D : MonoBehaviour
         playerAnim.SetBool("isRunning", Mathf.Abs(moveInput.x) > 0.1f);
 
     }
-
 
     IEnumerator InvulnerabilityCoroutine()
     {

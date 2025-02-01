@@ -19718,6 +19718,7 @@ GameObject:
   - component: {fileID: 388392532}
   - component: {fileID: 388392534}
   - component: {fileID: 388392533}
+  - component: {fileID: 388392535}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -19782,6 +19783,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388392531}
   m_CullTransparentMesh: 1
+--- !u!114 &388392535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388392531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a305d7f97e4df948981846d10f1257f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeBar: {fileID: 388392533}
 --- !u!1 &431924064
 GameObject:
   m_ObjectHideFlags: 0
@@ -20589,7 +20603,7 @@ Transform:
   m_GameObject: {fileID: 678569089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: -10}
+  m_LocalPosition: {x: -13.87, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24052,7 +24066,7 @@ Transform:
   m_GameObject: {fileID: 827141532}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: -10}
+  m_LocalPosition: {x: -13.87, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26248,6 +26262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6593985715443311351, guid: 2f984b9eb77084047b8b26e82fe7b30c, type: 3}
+      propertyPath: currentLife
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8238674782356409117, guid: 2f984b9eb77084047b8b26e82fe7b30c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -26348,7 +26366,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 7aabaaf9382c0f24bb158de4973e6ebb, type: 2}
     - target: {fileID: 8899716929103456822, guid: f062786c06d615749a7fae6503859fe2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -13.87
       objectReference: {fileID: 0}
     - target: {fileID: 8899716929103456822, guid: f062786c06d615749a7fae6503859fe2, type: 3}
       propertyPath: m_LocalPosition.y

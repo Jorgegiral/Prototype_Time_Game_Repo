@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameState: 2
-  currentLife: 0
+  currentLife: 4
+  fullLife: 4

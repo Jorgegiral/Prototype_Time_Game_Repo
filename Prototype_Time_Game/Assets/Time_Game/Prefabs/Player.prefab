@@ -262,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f440d4e87124994f93741da7bceaf38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
   hitForce: 8
   damageCooldown: 2
   speed: 8
@@ -274,6 +273,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  respawnPoint: {fileID: 0}
+  sceneManagerScript: {fileID: 0}
+  gameOverScene: GameOver
 --- !u!70 &7045195503110892931
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

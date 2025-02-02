@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.UI; //Librería para que funcione el New Input System
+using UnityEngine.Rendering.UI;
+using UnityEngine.SceneManagement; //Librería para que funcione el New Input System
 
 public class PlayerController2D : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class PlayerController2D : MonoBehaviour
 
     [Header("Respawn Parameters")]
     public Transform respawnPoint;
+    public SceneChanger sceneManagerScript;
+    public string gameOverScene;
+
 
     void Start()
     {
@@ -103,11 +107,15 @@ public class PlayerController2D : MonoBehaviour
 
                 if (GameManager.Instance.currentLife <= 0)
                 {
-                    Debug.Log("jugador muerto");
+                    if (!string.IsNullOrEmpty(gameOverScene))
+                    {
+                        SceneManager.LoadScene(gameOverScene);
+                    }
                 }
             }
         }
     }
+
     void GroundCheck()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);

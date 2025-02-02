@@ -3390,8 +3390,9 @@ GameObject:
   - component: {fileID: 621818671}
   - component: {fileID: 621818670}
   - component: {fileID: 621818672}
+  - component: {fileID: 621818673}
   m_Layer: 0
-  m_Name: Square
+  m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3509,6 +3510,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &621818673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621818669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4f0ad49a3b9d8429dce5296073139f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableObject: {fileID: 0}
+  activateObject: {fileID: 1212907010}
 --- !u!1 &672529844
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,12 +3535,12 @@ GameObject:
   - component: {fileID: 672529846}
   - component: {fileID: 672529845}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &672529845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4812,8 +4827,9 @@ GameObject:
   - component: {fileID: 1212907012}
   - component: {fileID: 1212907011}
   - component: {fileID: 1212907013}
+  - component: {fileID: 1212907014}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4931,6 +4947,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1212907014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212907010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4f0ad49a3b9d8429dce5296073139f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableObject: {fileID: 621818669}
+  activateObject: {fileID: 672529844}
 --- !u!1 &1243716794
 GameObject:
   m_ObjectHideFlags: 0

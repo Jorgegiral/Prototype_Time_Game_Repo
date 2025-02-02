@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    public GameObject enemy;
-    public GameObject trigger;
-    private GameObject npc;
-
-    void Start()
-    {
-        npc = GetComponent<GameObject>();
-    }
+    public GameObject disableObject;
+    public GameObject activateObject;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            trigger.SetActive(true);
+            if (activateObject != null)
+            {
+                activateObject.SetActive(true);
+            }
+            if (disableObject != null)
+            {
+                disableObject.SetActive(false);
+            }
         }
+        
     }
+
 }

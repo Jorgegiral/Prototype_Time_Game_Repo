@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Time_Game/Scenes/MainMenu.unity
     guid: 880c5541cdcb0a042b1e54f4b833742c
   - enabled: 1
-    path: Assets/Time_Game/Scenes/Level1.unity
-    guid: d71f382d572eb8946878c42f0aae2945
-  - enabled: 1
     path: Assets/Time_Game/Scenes/Level2.unity
     guid: c45cbaec3a784a649a04ee6d3c3ad1de
   - enabled: 1

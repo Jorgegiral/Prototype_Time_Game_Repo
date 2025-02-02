@@ -7,6 +7,8 @@ public class SceneChanger : MonoBehaviour
 {
     public void SceneLoader(int sceneToLoad)
     {
+        Time.timeScale = 1f;
+        GameManager.Instance.currentGameState = GameManager.GameStatus.gameRunning;
         SceneManager.LoadScene(sceneToLoad);
     }
 

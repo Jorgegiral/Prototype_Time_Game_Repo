@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueActive: {fileID: 2138114799}
-  dialogueNext: {fileID: 0}
+  dialogueNext: {fileID: 340197571}
   dialogueBack: {fileID: 2102132113}
   dialoguePanel: {fileID: 1631955937}
 --- !u!114 &166954155

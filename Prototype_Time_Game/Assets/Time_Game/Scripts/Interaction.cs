@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
     public GameObject disableObject;
+    public GameObject disableObject2;
     public GameObject activateObject;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -18,6 +19,7 @@ public class Interaction : MonoBehaviour
             if (disableObject != null)
             {
                 disableObject.SetActive(false);
+                disableObject2.SetActive(false);
             }
         }
         

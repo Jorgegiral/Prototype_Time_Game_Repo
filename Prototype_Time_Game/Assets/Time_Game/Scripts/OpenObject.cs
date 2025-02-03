@@ -27,6 +27,7 @@ public class OpenObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && open)
         {
+            AudioManager.Instance.PlaySFX(2);
             ObjectOpen();
         }
     }

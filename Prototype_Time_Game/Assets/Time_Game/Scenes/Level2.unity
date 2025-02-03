@@ -71941,6 +71941,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1350055822}
     m_Modifications:
+    - target: {fileID: 1792351947424269324, guid: f7fd15ddc7bb43a4fb712eff699e367b, type: 3}
+      propertyPath: musicLibrary.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525390418617580431, guid: f7fd15ddc7bb43a4fb712eff699e367b, type: 3}
+      propertyPath: m_Volume
+      value: 0.266
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525390418617580431, guid: f7fd15ddc7bb43a4fb712eff699e367b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2eb7dddc14e7925459f716621d6c1521, type: 3}
+    - target: {fileID: 3525390418617580431, guid: f7fd15ddc7bb43a4fb712eff699e367b, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3794375277365407822, guid: f7fd15ddc7bb43a4fb712eff699e367b, type: 3}
       propertyPath: m_Name
       value: AudioManager

@@ -30,6 +30,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && items != null)
         {
+            AudioManager.Instance.PlaySFX(1);
             TakeItems(items);
         }
     }

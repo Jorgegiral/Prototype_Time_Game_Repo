@@ -153,6 +153,7 @@ public class PlayerController2D : MonoBehaviour
         {
             if (isGrounded)
             {
+                AudioManager.Instance.PlaySFX(0);
                 playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
         }

@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -35,7 +35,23 @@ public class EnemyController : MonoBehaviour
             enemymovement = Vector2.zero;
             enemyAnim.SetBool("isRunning", false);
         }
-        enemyRb.MovePosition(enemyRb.position + enemymovement * speed * Time.deltaTime);
+        enemyRb.MovePosition(enemyRb.position + enemymovement * speed * Time.fixedDeltaTime);
+
+        /* float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+         if (distanceToPlayer < detectionRadius)
+         {
+             enemymovement = (player.position - transform.position).normalized;
+             enemymovement.y = 0;
+             enemyAnim.SetBool("isRunning", true);
+             Enemydirection(enemymovement.x);
+         }
+         else
+         {
+             enemymovement = Vector2.zero;
+             enemyAnim.SetBool("isRunning", false);
+         }
+         enemyRb.MovePosition(enemyRb.position + enemymovement * speed * Time.deltaTime);*/
     }
 
     void Enemydirection(float directionX)

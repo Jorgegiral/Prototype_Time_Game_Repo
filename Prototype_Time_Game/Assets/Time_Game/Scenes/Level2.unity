@@ -394,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390320560753170754, guid: fc387d8c0bb084447b4a741172dc9d26, type: 3}
       propertyPath: speed
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7390320560753170754, guid: fc387d8c0bb084447b4a741172dc9d26, type: 3}
       propertyPath: player
@@ -23855,7 +23855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390320560753170754, guid: fc387d8c0bb084447b4a741172dc9d26, type: 3}
       propertyPath: speed
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7390320560753170754, guid: fc387d8c0bb084447b4a741172dc9d26, type: 3}
       propertyPath: player
@@ -71452,7 +71452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390320560753170754, guid: fc387d8c0bb084447b4a741172dc9d26, type: 3}
       propertyPath: speed
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7390320560753170754, guid: fc387d8c0bb084447b4a741172dc9d26, type: 3}
       propertyPath: player
